@@ -6,15 +6,15 @@
     <title>Ritsol Labs — Quantitative Systems & Architecture</title>
     <style>
         :root {
-            --bg-dark: #000000;
-            --bg-card: #111112;
-            --bg-card-hover: #1c1c1e;
-            --text-primary: #f5f5f7;
-            --text-secondary: #86868b;
-            --text-muted: #6e6e73;
-            --tech-accent: #2997ff;
-            --edu-accent: #e3b044;
-            --border-subtle: #2d2d2f;
+            --bg-light: #f5f5f7;
+            --bg-card: #ffffff;
+            --bg-card-hover: #fafafa;
+            --text-primary: #1d1d1f;
+            --text-secondary: #515154;
+            --text-muted: #86868b;
+            --tech-accent: #0066cc;
+            --edu-accent: #10b981; /* Premium Mint Green */
+            --border-subtle: #e5e5e7;
             --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
@@ -26,7 +26,7 @@
 
         body {
             font-family: var(--font-stack);
-            background-color: var(--bg-dark);
+            background-color: var(--bg-light);
             color: var(--text-primary);
             line-height: 1.47059;
             font-weight: 400;
@@ -41,7 +41,7 @@
             top: 0;
             width: 100%;
             height: 48px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(245, 245, 247, 0.8);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-subtle);
@@ -84,7 +84,7 @@
 
         /* Hero presentation section */
         .hero {
-            padding: 140px 22px 80px 22px;
+            padding: 140px 22px 60px 22px;
             max-width: 1024px;
             margin: 0 auto;
             text-align: center;
@@ -93,7 +93,7 @@
         .hero-tag {
             font-size: 14px;
             font-weight: 600;
-            color: var(--text-secondary);
+            color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             margin-bottom: 16px;
@@ -104,9 +104,7 @@
             font-weight: 700;
             letter-spacing: -0.04em;
             line-height: 1.07143;
-            background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--text-primary);
             margin-bottom: 24px;
         }
 
@@ -115,7 +113,7 @@
             font-weight: 400;
             color: var(--text-secondary);
             max-width: 750px;
-            margin: 0 auto 40px auto;
+            margin: 0 auto 20px auto;
             letter-spacing: -0.01em;
         }
 
@@ -123,7 +121,7 @@
         .divisions-section {
             max-width: 1024px;
             margin: 0 auto;
-            padding: 40px 22px 80px 22px;
+            padding: 20px 22px 60px 22px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 28px;
@@ -140,15 +138,17 @@
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
 
         .card:hover {
             background-color: var(--bg-card-hover);
-            border-color: #424245;
+            border-color: var(--text-muted);
             transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
         }
 
-        /* Interactive subtle background images/vectors built directly inside */
+        /* Interactive background vectors built directly inside */
         .card-graphic {
             width: 100%;
             height: 160px;
@@ -161,13 +161,13 @@
         }
 
         .tech-graphic {
-            background: linear-gradient(135deg, rgba(41,151,255,0.05) 0%, rgba(0,0,0,0) 100%);
-            border: 1px solid rgba(41,151,255,0.15);
+            background: linear-gradient(135deg, rgba(0,102,204,0.03) 0%, rgba(255,255,255,0) 100%);
+            border: 1px solid rgba(0,102,204,0.1);
         }
 
         .edu-graphic {
-            background: linear-gradient(135deg, rgba(227,176,68,0.05) 0%, rgba(0,0,0,0) 100%);
-            border: 1px solid rgba(227,176,68,0.15);
+            background: linear-gradient(135deg, rgba(16,185,129,0.03) 0%, rgba(255,255,255,0) 100%);
+            border: 1px solid rgba(16,185,129,0.1);
         }
 
         .card-tag {
@@ -198,15 +198,16 @@
         /* Trust & Verification Console */
         .trust-section {
             max-width: 1024px;
-            margin: 0 auto 100px auto;
+            margin: 0 auto 80px auto;
             padding: 0 22px;
         }
 
         .trust-banner {
-            background: linear-gradient(180deg, #111112 0%, #080809 100%);
+            background-color: var(--bg-card);
             border: 1px solid var(--border-subtle);
             border-radius: 22px;
             padding: 48px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
 
         .trust-header {
@@ -239,7 +240,7 @@
 
         /* Footer architecture block */
         footer {
-            background-color: #111112;
+            background-color: var(--bg-card);
             border-top: 1px solid var(--border-subtle);
             padding: 48px 22px;
         }
@@ -311,7 +312,7 @@
         <div class="card">
             <div>
                 <div class="card-graphic tech-graphic">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0066cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="16 18 22 12 16 6"></polyline>
                         <polyline points="8 6 2 12 8 18"></polyline>
                         <line x1="14" y1="4" x2="10" y2="20"></line>
@@ -328,16 +329,16 @@
         <div class="card">
             <div>
                 <div class="card-graphic edu-graphic">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#e3b044" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="2" y1="12" x2="22" y2="12"></line>
                         <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                     </svg>
                 </div>
-                <p class="card-tag edu-tag">Quantitative Systems</p>
+                <p class="card-tag edu-tag">Elite Mathematics Mentorship & Quantitative Curriculum Design</p>
                 <h2 class="card-title">Santona Academy</h2>
                 <p class="card-desc">
-                    Delivering deep conceptual logic mentoring and advanced mathematics curriculum support for high-stakes international academic trajectories.
+                    Providing comprehensive educational support and advanced competitive tutoring driven by custom, state-of-the-art curriculum frameworks. By combining advanced AI-assisted design workflows with rigorous, active human intervention and review at every step, we build bespoke study tracks, premium instructional materials, and exhaustive logical validations. Every student learning trajectory undergoes hyper-detailed structural oversight, featuring optimized and focused analysis tailored to match international competitive math and quantitative benchmarks.
                 </p>
             </div>
         </div>
@@ -362,7 +363,7 @@
 
     <footer>
         <div class="footer-container">
-            <p class="footer-text">&copy; 2026 Ritsol Labs. All structural perimeters verified.</p>
+            <p class="footer-text">&copy; 2026 Ritsol Labs. All perimeters verified.</p>
             <p class="footer-contact">Corporate Inquiries: <a href="mailto:contact@ritsollabs.com">contact@ritsollabs.com</a></p>
         </div>
     </footer>
