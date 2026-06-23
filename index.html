@@ -13,7 +13,7 @@
             --text-secondary: #515154;
             --text-muted: #86868b;
             --tech-accent: #0066cc;
-            --edu-accent: #10b981; /* Premium Mint Green */
+            --edu-accent: #10b981;
             --border-subtle: #e5e5e7;
             --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
@@ -35,7 +35,6 @@
             overflow-x: hidden;
         }
 
-        /* Sophisticated Navigation Layer */
         nav {
             position: fixed;
             top: 0;
@@ -82,7 +81,6 @@
             color: var(--text-primary);
         }
 
-        /* Hero presentation section */
         .hero {
             padding: 140px 22px 60px 22px;
             max-width: 1024px;
@@ -117,7 +115,6 @@
             letter-spacing: -0.01em;
         }
 
-        /* Two Column Dynamic Cards Grid */
         .divisions-section {
             max-width: 1024px;
             margin: 0 auto;
@@ -131,7 +128,7 @@
             background-color: var(--bg-card);
             border: 1px solid var(--border-subtle);
             border-radius: 18px;
-            padding: 40px;
+            padding: 32px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -148,26 +145,48 @@
             box-shadow: 0 8px 24px rgba(0,0,0,0.04);
         }
 
-        /* Interactive background vectors built directly inside */
-        .card-graphic {
+        /* Premium Graphic Containers */
+        .card-image-wrapper {
             width: 100%;
-            height: 160px;
-            border-radius: 10px;
-            margin-bottom: 32px;
+            height: 200px;
+            border-radius: 12px;
+            margin-bottom: 28px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--border-subtle);
+        }
+
+        /* Tech Image Architecture: Cybernetic Grid Pattern */
+        .tech-image-bg {
+            background: #0f172a;
+            background-image: 
+                linear-gradient(rgba(0, 102, 204, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 102, 204, 0.15) 1px, transparent 1px);
+            background-size: 20px 20px;
+            width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
         }
 
-        .tech-graphic {
-            background: linear-gradient(135deg, rgba(0,102,204,0.03) 0%, rgba(255,255,255,0) 100%);
-            border: 1px solid rgba(0,102,204,0.1);
+        /* Edu Image Architecture: Analytical Curve Blueprint */
+        .edu-image-bg {
+            background: #064e3b;
+            background-image: 
+                radial-gradient(rgba(16, 185, 129, 0.2) 1px, transparent 0),
+                radial-gradient(rgba(16, 185, 129, 0.2) 1px, transparent 0);
+            background-size: 16px 16px;
+            background-position: 0 0, 8px 8px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .edu-graphic {
-            background: linear-gradient(135deg, rgba(16,185,129,0.03) 0%, rgba(255,255,255,0) 100%);
-            border: 1px solid rgba(16,185,129,0.1);
+        .inner-svg-glow {
+            filter: drop-shadow(0 0 12px rgba(255,255,255,0.2));
         }
 
         .card-tag {
@@ -182,20 +201,19 @@
         .edu-tag { color: var(--edu-accent); }
 
         .card-title {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 600;
             letter-spacing: -0.02em;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
+            color: var(--text-primary);
         }
 
         .card-desc {
-            font-size: 15px;
+            font-size: 14.5px;
             color: var(--text-secondary);
-            line-height: 1.5;
-            margin-bottom: 32px;
+            line-height: 1.55;
         }
 
-        /* Trust & Verification Console */
         .trust-section {
             max-width: 1024px;
             margin: 0 auto 80px auto;
@@ -238,7 +256,6 @@
             line-height: 1.6;
         }
 
-        /* Footer architecture block */
         footer {
             background-color: var(--bg-card);
             border-top: 1px solid var(--border-subtle);
@@ -274,14 +291,12 @@
             text-decoration: underline;
         }
 
-        /* Absolute Breakpoint Rules */
         @media (max-width: 768px) {
-            .hero-title { font-size: 40px; }
+            .hero-title { font-size: 38px; }
             .hero-subtitle { font-size: 18px; }
             .divisions-section { grid-template-columns: 1fr; gap: 24px; }
             .trust-grid { grid-template-columns: 1fr; gap: 28px; }
             .trust-banner { padding: 32px; }
-            .card { padding: 32px; }
         }
     </style>
 </head>
@@ -290,11 +305,9 @@
     <nav>
         <div class="nav-container">
             <a href="#" class="nav-logo">Ritsol Labs</a>
-            <div class="nav-menu">
-                <div class="nav-links">
-                    <a href="#divisions">Divisions</a>
-                    <a href="#compliance">Trust & Clearance</a>
-                </div>
+            <div class="nav-links">
+                <a href="#divisions">Divisions</a>
+                <a href="#compliance">Trust & Clearance</a>
             </div>
         </div>
     </nav>
@@ -311,12 +324,16 @@
         
         <div class="card">
             <div>
-                <div class="card-graphic tech-graphic">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0066cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="16 18 22 12 16 6"></polyline>
-                        <polyline points="8 6 2 12 8 18"></polyline>
-                        <line x1="14" y1="4" x2="10" y2="20"></line>
-                    </svg>
+                <div class="card-image-wrapper">
+                    <div class="tech-image-bg">
+                        <svg class="inner-svg-glow" width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                            <polyline points="10 10 12 7 14 10"></polyline>
+                            <polyline x1="6" y1="6" x2="18" y2="6"></polyline>
+                        </svg>
+                    </div>
                 </div>
                 <p class="card-tag tech-tag">Computing & Infrastructure</p>
                 <h2 class="card-title">RitsolLabs.ai</h2>
@@ -328,12 +345,16 @@
 
         <div class="card">
             <div>
-                <div class="card-graphic edu-graphic">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                    </svg>
+                <div class="card-image-wrapper">
+                    <div class="edu-image-bg">
+                        <svg class="inner-svg-glow" width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 3v18h18"></path>
+                            <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path>
+                            <circle cx="18.7" cy="8" r="1" fill="#34d399"></circle>
+                            <circle cx="13.6" cy="13.2" r="1" fill="#34d399"></circle>
+                        </circle>
+                        </svg>
+                    </div>
                 </div>
                 <p class="card-tag edu-tag">Elite Mathematics Mentorship & Quantitative Curriculum Design</p>
                 <h2 class="card-title">Santona Academy</h2>
